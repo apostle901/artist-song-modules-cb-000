@@ -1,5 +1,6 @@
 require 'pry'
 require_relative 'concerns/memorable'
+require_relative 'concerns/findable'
 
 class Artist
   extend Memorable
@@ -7,10 +8,6 @@ class Artist
   attr_reader :songs
 
   @@artists = []
-
-  def self.find_by_name(name)
-    @@artists.detect{|a| a.name == name}
-  end
 
   def initialize
     @@artists << self
